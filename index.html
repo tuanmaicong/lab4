@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="info">
+        <img src="{{img}}" alt="">
+        <p>{{name}}</p>
+        <p>{{dateSinh}}</p>
+        <p>{{gioitinh}}</p>
+        <p>{{diemTB}}</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        const app=angular.module("myApp",[]);
+        app.controller("info",function($scope){
+            $scope.img="https://picsum.photos/100/100";
+            $scope.name="Mai Xuân Hậu";
+            $scope.dateSinh="18/3/2002";
+            $scope.gioitinh="Nam";
+            $scope.diemTB=8;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: solid 1px black;
+        }
+        tr{
+            border: solid 1px black;
+        }
+        th{
+            border: solid 1px black;
+        }
+        td{
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="info">
+        <table>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Điểm Trung Bình</th>
+            </tr>
+            <tr>
+                <td><img src="{{students[0].img}}" alt=""></td>
+                <td>{{students[0].name}}</td>
+                <td>{{students[0].ngaySinh}}</td>
+                <td>{{students[0].gioiTinh}}</td>
+                <td>{{students[0].diemTB}}</td>
+            </tr>
+            <tr>
+                <td><img src="{{students[0].img}}" alt=""></td>
+                <td>{{students[1].name}}</td>
+                <td>{{students[1].ngaySinh}}</td>
+                <td>{{students[1].gioiTinh}}</td>
+                <td>{{students[1].diemTB}}</td>
+            </tr>
+            <tr>
+                <td><img src="{{students[0].img}}" alt=""></td>
+                <td>{{students[2].name}}</td>
+                <td>{{students[2].ngaySinh}}</td>
+                <td>{{students[2].gioiTinh}}</td>
+                <td>{{students[2].diemTB}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        const app=angular.module("myApp",[]);
+
+        app.controller("info",function($scope){
+            $scope.students = [
+                {
+                img:"https://picsum.photos/100/100",
+                name:"Mai Xuân Hậu",
+                ngaySinh:"18/03/2002",
+                gioiTinh:"bê đê",
+                diemTB:0.5,
+                },
+                {
+                img:"https://picsum.photos/100/100",
+                name:"Mai Hán Triều",
+                ngaySinh:"18/03/2002",
+                gioiTinh:"bê đê",
+                diemTB:0.4,
+                },
+                {
+                img:"https://picsum.photos/100/100",
+                name:"Mai Công Dự",
+                ngaySinh:"18/03/2002",
+                gioiTinh:"bê đê",
+                diemTB:0.3,
+                }
+            ]
+        })
+    </script>
+</body>
+</html>

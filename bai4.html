@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="cvs">
+        <label for="">Chiều dài:</label><br>
+        <input type="text" ng-model="chieudai"><br>
+        <label for="">Chiều rộng:</label><br>
+        <input type="text" ng-model="chieurong"><br>
+        <label for="">Chu vi:</label><br>
+        <input type="text" ng-model="v" readonly><br>
+        <label for="">Diện tích:</label><br>
+        <input type="text" ng-model="s"  readonly><br>
+        <button ng-click="tinh()" >Submit</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        const app=angular.module("myApp",[]);
+        app.controller("cvs",function($scope){
+            $scope.chieudai=0;
+            $scope.chieurong=0;
+            $scope.tinh = function(){
+                var a = +$scope.chieudai;
+                var b = +$scope.chieurong;
+                $scope.v=(a+b)*2;
+                $scope.s=a*b;
+            }
+        })
+    </script>
+</body>
+</html>

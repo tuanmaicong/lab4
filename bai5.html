@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="quaMon">
+        <label for="">Họ Tên</label><br>
+        <input type="text" ng-model="name"><br>
+        <label for="">Ngày Sinh</label><br>
+        <input type="text" ng-model="date"><br>
+        <label for="">Giới Tính</label><br>
+        <select name="" id="">
+            <option value="nam">Nam</option>
+            <option value="nu">Nữ</option>
+        </select><br>
+        <label for="">Điểm</label><br>
+        <input type="text" ng-model="diem"><br>
+        <label for="">Trạng thái</label><br>
+        <input type="text" ng-model="trangthai"><br><br>
+        <button ng-click="tinh()">Submit</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        const app = angular.module("myApp", []);
+        app.controller("quaMon", function ($scope) {
+            $scope.tinh = function () {
+                var d = +$scope.diem;
+                if (d < 5) {
+                    $scope.trangthai = "Trượt";
+                } else {
+                    $scope.trangthai = "Đậu";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="info">
+        <img src="{{info.img}}" alt="">
+        <p>Name:{{info.name}}</p>
+        <p>Ngày sinh:{{info.ngaySinh}}</p>
+        <p>Giới tính:{{info.gioiTinh}}</p>
+        <p>Điểm TB:{{info.diemTB}}</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        const app=angular.module("myApp",[]);
+
+        app.controller("info",function($scope){
+            $scope.info={
+                img:"https://picsum.photos/100/100",
+                name:"Mai Xuân Hậu",
+                ngaySinh:"18/03/2002",
+                gioiTinh:"bê đê",
+                diemTB:0.5,
+            }
+        })
+    </script>
+</body>
+</html>
